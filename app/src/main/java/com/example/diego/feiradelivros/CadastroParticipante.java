@@ -29,6 +29,7 @@ public class CadastroParticipante extends AppCompatActivity {
         txtNome = (EditText) findViewById(R.id.txtNome);
         txtEmail = (EditText) findViewById(R.id.txtEmail);
 
+        // Primeiro campo a ser digitado quando é aberta a tela
         txtNome.requestFocus();
 
         btnCadastrarParticipante.setOnClickListener(new View.OnClickListener() {

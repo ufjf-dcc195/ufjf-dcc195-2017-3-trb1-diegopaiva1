@@ -19,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
     private Button btnCadastrarLivro;
     private ListView lstParticipantes;
     private ArrayList<Participante> participantes = new ArrayList<>();
+    private ArrayList<Livro> livros = new ArrayList<>();
     private static final int PEDE_PARTICIPANTE = 1;
+    private static final int PEDE_LIVRO = 1;
 
     // Adiciona dados iniciais no aplicativo
     private void adicionaParticipantesIniciais() {
@@ -63,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnCadastrarLivro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CadastroLivro.class);
+                startActivityForResult(intent, PEDE_LIVRO);
+            }
+        });
+
     }
 
     @Override
@@ -72,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
             String email = data.getStringExtra("email");
             Participante participante = new Participante(nome, email);
             participantes.add(participante);
+        }
+        else if(requestCode == MainActivity.PEDE_LIVRO && resultCode == RESULT_OK && data != null) {
+            String titulo = data.getStringExtra("titulo");
+            String editora = data.getStringExtra("editora");
+            Integer ano = Integer.parseInt(data.getStringExtra("ano"));
+            Livro livro = new Livro(titulo, editora, ano);
+            livros.add(livro);
         }
     }
 
