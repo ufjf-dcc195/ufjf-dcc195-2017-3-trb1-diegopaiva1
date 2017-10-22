@@ -20,7 +20,7 @@
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:id="@+id/btnCadastrarReserva"
+        android:id="@+id/btnCadastrar"
         android:layout_width="110dp"
         android:layout_height="66dp"
         android:text="@string/btnCadastrarReserva"
@@ -40,7 +40,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="74dp"
-        app:layout_constraintRight_toLeftOf="@+id/btnCadastrarReserva"
+        app:layout_constraintRight_toLeftOf="@+id/btnCadastrar"
         android:layout_marginRight="8dp"
         app:layout_constraintLeft_toRightOf="@+id/btnCadastrarParticipante"
         android:layout_marginLeft="8dp" />
