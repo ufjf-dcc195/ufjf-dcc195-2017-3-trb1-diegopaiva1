@@ -12,7 +12,7 @@ import org.w3c.dom.Text;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CadastroParticipante extends MainActivity {
+public class CadastroParticipante extends AppCompatActivity {
 
     private Button btnCadastrarParticipante;
     private EditText txtNome;
@@ -37,13 +37,12 @@ public class CadastroParticipante extends MainActivity {
                 String nome = txtNome.getText().toString();
                 // Pega o email informado no cadastro
                 String email = txtEmail.getText().toString();
-                // Cria novo objeto participante
-                Participante participante = new Participante(nome, email);
-                // Adiciona o novo participante na lista de participantes
-                setAdaptador(participante);
                 // Cria novo intent para mudar de activity
-                Intent intent = new Intent (CadastroParticipante.this, MainActivity.class);
-                startActivity(intent);
+                Intent intent = new Intent ();
+                intent.putExtra("nome", nome);
+                intent.putExtra("email", email);
+                setResult(RESULT_OK, intent);
+                finish();
             }
         });
 
