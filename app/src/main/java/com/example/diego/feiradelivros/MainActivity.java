@@ -80,6 +80,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        lstParticipantes.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l){
+                Participante participante = adaptador.getItem(i);
+                if(participante!=null){
+                    participante.registraHora(getApplicationContext());
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        lstParticipantes.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
+                Participante participante = adaptador.getItem(i);
+                if(participante!=null){
+                    Intent intent = new Intent (MainActivity.this, DetalhesParticipante.class);
+                    intent.putExtra("participante", participante);
+                    startActivity(intent);
+                }
+
         // Adiciona evento de mudança de activity ao clicar em cadastrar livro
         btnCadastrarLivro.setOnClickListener(new View.OnClickListener() {
             @Override

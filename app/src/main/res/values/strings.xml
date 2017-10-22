@@ -9,6 +9,7 @@
     <string name="activity_cadastrar_livro">Cadastrar livro</string>
     <string name="activity_visualizar_livros">Livros cadastrados</string>
     <string name="btnCadastrar">Cadastrar</string>
+    <string name="btnVoltar">Voltar</string>
     <string name="hintTitulo">Título</string>
     <string name="txtTitulo">Título</string>
     <string name="txtEditora">Editora</string>
