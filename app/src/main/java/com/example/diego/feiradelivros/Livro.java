@@ -1,7 +1,11 @@
 package com.example.diego.feiradelivros;
 
 
-public class Livro {
+import android.graphics.Typeface;
+
+import java.io.Serializable;
+
+public class Livro implements Serializable {
     private String titulo;
     private String editora;
     private Integer ano;
@@ -38,5 +42,13 @@ public class Livro {
 
     public void setAno(Integer ano) {
         this.ano = ano;
+    }
+
+    @Override
+    public String toString() {
+        String dadosVisualizacao =  "\nTítulo: " + this.titulo + "\n" +
+                                    "\nEditora: " + this.editora + "\n" +
+                                    "\nAno: " + this.ano + "\n";
+        return dadosVisualizacao;
     }
 }

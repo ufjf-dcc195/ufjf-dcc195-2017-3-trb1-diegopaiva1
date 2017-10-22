@@ -16,10 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CadastroParticipante" android:label="@string/activity_cadastrar_participante">
-        </activity>
-        <activity android:name=".CadastroLivro" android:label="@string/activity_cadastrar_livro">
-
+        <activity
+            android:name=".CadastroParticipante"
+            android:label="@string/activity_cadastrar_participante"></activity>
+        <activity
+            android:name=".CadastroLivro"
+            android:label="@string/activity_cadastrar_livro"></activity>
+        <activity
+            android:name=".VisualizarLivros"
+            android:label="@string/activity_visualizar_livros">
         </activity>
     </application>
 

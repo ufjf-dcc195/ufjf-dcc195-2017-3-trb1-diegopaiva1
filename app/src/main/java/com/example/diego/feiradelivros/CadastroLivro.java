@@ -33,12 +33,14 @@ public class CadastroLivro extends AppCompatActivity {
                 // Pega o titulo informado no cadastro
                 String titulo = txtTitulo.getText().toString();
                 // Pega a editora informada no cadastro
-                String editora = txtTitulo.getText().toString();
+                String editora = txtEditora.getText().toString();
                 // Pega o ano informado no cadastro
-                Integer ano = Integer.parseInt(txtAno.getText().toString());
+                String ano = txtAno.getText().toString();
+
                 // Cria novo intent para mudar de activity
                 Intent intent = new Intent ();
                 intent.putExtra("titulo", titulo);
+                intent.putExtra("editora", editora);
                 intent.putExtra("ano", ano);
                 setResult(RESULT_OK, intent);
                 finish();
