@@ -1,7 +1,6 @@
 package com.example.diego.feiradelivros;
 
 import android.content.Intent;
-import android.icu.text.MessagePattern;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnCadastrarParticipante = (Button) findViewById(R.id.btnCadastrarParticipante);
-        btnCadastrarReserva = (Button) findViewById(R.id.btnCadastrarReserva);
+        btnCadastrarReserva = (Button) findViewById(R.id.btnCadastrar);
         btnCadastrarLivro = (Button) findViewById(R.id.btnCadastrarLivro);
         btnVisualizarLivros = (Button) findViewById(R.id.btnVisualizarLivros);
 
@@ -119,6 +117,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, VisualizarLivros.class);
+                intent.putExtra("livros", livros);
+                startActivity(intent);
+            }
+        });
+
+        // Adiciona evento de mudança de activity ao clicar em visualizar livro
+        btnCadastrarReserva.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CadastroReserva.class);
+                intent.putExtra("participantes", participantes);
                 intent.putExtra("livros", livros);
                 startActivity(intent);
             }

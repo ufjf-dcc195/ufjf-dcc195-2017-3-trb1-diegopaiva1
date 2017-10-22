@@ -4,20 +4,30 @@ package com.example.diego.feiradelivros;
 import android.graphics.Typeface;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Livro implements Serializable {
     private String titulo;
     private String editora;
     private Integer ano;
+    private ArrayList<Participante> participantes;
 
     public Livro(String titulo, String editora, Integer ano) {
+        this.participantes = new ArrayList<Participante>();
         this.titulo = titulo;
         this.editora = editora;
         this.ano = ano;
     }
 
     public Livro() {
-        // construtor vazio
+        this.participantes = new ArrayList<Participante>();
+    }
+
+    public void adicionarParticipante(Participante participante) {
+        if (participante != null) {
+            this.participantes.add(participante);
+        }
+
     }
 
     public String getTitulo() {

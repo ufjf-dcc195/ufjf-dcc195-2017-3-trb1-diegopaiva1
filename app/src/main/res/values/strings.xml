@@ -8,6 +8,8 @@
     <string name="activity_cadastrar_participante">Cadastrar participante</string>
     <string name="activity_cadastrar_livro">Cadastrar livro</string>
     <string name="activity_visualizar_livros">Livros cadastrados</string>
+    <string name="activity_cadastrar_reserva">Cadastrar reserva</string>
+    <string name="activity_detalhes_participante">Detalhes do participante</string>
     <string name="btnCadastrar">Cadastrar</string>
     <string name="btnVoltar">Voltar</string>
     <string name="hintTitulo">Título</string>
@@ -15,4 +17,6 @@
     <string name="txtEditora">Editora</string>
     <string name="txtAno">Ano</string>
     <string name="btnVisualizarLivros">Visualizar livros</string>
+    <string name="labelEscolherParticipante">Escolha o participante:</string>
+    <string name="labelEscolherLivro">Escolha o livro:</string>
 </resources>
