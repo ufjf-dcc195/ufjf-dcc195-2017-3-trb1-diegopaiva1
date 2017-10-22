@@ -62,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        final ArrayAdapter<Participante> adaptador = new ArrayAdapter<Participante>(
+                getApplicationContext(),
+                android.R.layout.simple_list_item_1, android.R.id.text1,
+                participantes
+        );
+
 
         // Lista os participantes
         lstParticipantes.setAdapter(getAdptador());
