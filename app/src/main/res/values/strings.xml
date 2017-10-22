@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Feira de livros</string>
+    <string name="btnCadastrarParticipante">Cadastrar participante</string>
+    <string name="btnCadastrarReserva">Cadastrar reserva</string>
+    <string name="btnCadastrarLivro">Cadastrar livro</string>
+    <string name="hintEmail">Email</string>
+    <string name="hintNome">Nome</string>
+    <string name="activity_cadastrar_participante">Cadastrar participante</string>
+    <string name="btnCadastrar">Cadastrar</string>
 </resources>

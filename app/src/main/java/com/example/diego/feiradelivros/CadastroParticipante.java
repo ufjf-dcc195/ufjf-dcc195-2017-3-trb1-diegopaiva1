@@ -1,0 +1,51 @@
+package com.example.diego.feiradelivros;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import org.w3c.dom.Text;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class CadastroParticipante extends MainActivity {
+
+    private Button btnCadastrarParticipante;
+    private EditText txtNome;
+    private EditText txtEmail;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cadastro_participante);
+
+        btnCadastrarParticipante = (Button) findViewById(R.id.btnCadastrarParticipante);
+
+        txtNome = (EditText) findViewById(R.id.txtNome);
+        txtEmail = (EditText) findViewById(R.id.txtEmail);
+
+        btnCadastrarParticipante.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // Pega o nome informado no cadastro
+                String nome = txtNome.getText().toString();
+                // Pega o email informado no cadastro
+                String email = txtEmail.getText().toString();
+                // Cria novo objeto participante
+                Participante participante = new Participante(nome, email);
+                // Adiciona o novo participante na lista de participantes
+                setAdaptador(participante);
+                // Cria novo intent para mudar de activity
+                Intent intent = new Intent (CadastroParticipante.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
+}
