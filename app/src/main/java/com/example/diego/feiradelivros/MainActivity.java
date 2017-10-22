@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnCadastrarReserva;
     private Button btnCadastrarLivro;
     private ListView lstParticipantes;
-    protected ArrayList<Participante> participantes = new ArrayList<>();
+    private ArrayList<Participante> participantes = new ArrayList<>();
+    private static final int PEDE_PARTICIPANTE = 1;
 
     // Adiciona dados iniciais no aplicativo
     private void adicionaParticipantesIniciais() {
@@ -27,16 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
         participantes.add(participante1);
         participantes.add(participante2);
-    }
-
-    public ArrayAdapter<Participante> getAdptador() {
-        final ArrayAdapter<Participante> adaptador = new ArrayAdapter<Participante>(
-                getApplicationContext(),
-                android.R.layout.simple_list_item_1, android.R.id.text1,
-                participantes
-        );
-
-        return adaptador;
     }
 
 
@@ -53,24 +44,32 @@ public class MainActivity extends AppCompatActivity {
 
         adicionaParticipantesIniciais();
 
+        final ArrayAdapter<Participante> adaptador = new ArrayAdapter<Participante>(
+                getApplicationContext(),
+                android.R.layout.simple_list_item_1, android.R.id.text1,
+                participantes
+        );
+
+        // Lista os participantes
+        lstParticipantes.setAdapter(adaptador);
 
         btnCadastrarParticipante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (MainActivity.this, CadastroParticipante.class);
-                startActivity(intent);
+                startActivityForResult(intent, PEDE_PARTICIPANTE);
             }
         });
-
-
-        // Lista os participantes
-        lstParticipantes.setAdapter(getAdptador());
-
     }
 
-
-    public void setAdaptador(Participante participante) {
-        getAdptador().add(participante);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == MainActivity.PEDE_PARTICIPANTE && resultCode == RESULT_OK && data != null){
+            String nome = data.getStringExtra("nome");
+            String email = data.getStringExtra("email");
+            Participante participante = new Participante(nome, email);
+            participantes.add(participante);
+        }
     }
 
 }
