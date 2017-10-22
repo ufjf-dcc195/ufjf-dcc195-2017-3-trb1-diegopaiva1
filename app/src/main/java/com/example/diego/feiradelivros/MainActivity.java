@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         adicionaParticipantesIniciais();
 
+        // Cria adaptador para realizar a listagem
         final ArrayAdapter<Participante> adaptador = new ArrayAdapter<Participante>(
                 getApplicationContext(),
                 android.R.layout.simple_list_item_1, android.R.id.text1,
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         // Lista os participantes
         lstParticipantes.setAdapter(adaptador);
 
+        // Adiciona evento de mudança de activity ao clicar em cadastrar participante
         btnCadastrarParticipante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

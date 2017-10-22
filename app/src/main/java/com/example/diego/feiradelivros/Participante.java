@@ -31,6 +31,7 @@ public class Participante implements Serializable {
         this.email = email;
     }
 
+    // Método para que, ao realizar a listagem, seja exibido apenas o nome do participante
     @Override
     public String toString() {
         return this.nome;
