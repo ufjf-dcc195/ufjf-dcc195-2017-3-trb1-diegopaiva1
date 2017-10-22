@@ -29,14 +29,17 @@ public class CadastroParticipante extends AppCompatActivity {
         txtNome = (EditText) findViewById(R.id.txtNome);
         txtEmail = (EditText) findViewById(R.id.txtEmail);
 
+        // Primeiro campo a ser digitado quando é aberta a tela
+        txtNome.requestFocus();
+
         btnCadastrarParticipante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 // Pega o nome informado no cadastro
                 String nome = txtNome.getText().toString();
                 // Pega o email informado no cadastro
                 String email = txtEmail.getText().toString();
+
                 // Cria novo intent para mudar de activity
                 Intent intent = new Intent ();
                 intent.putExtra("nome", nome);

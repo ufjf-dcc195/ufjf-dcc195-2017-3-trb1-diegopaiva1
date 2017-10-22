@@ -66,6 +66,7 @@ public class Participante implements Serializable {
         }
     }
 
+    // Método para que, ao realizar a listagem, seja exibido apenas o nome do participante
     @Override
     public String toString() {
         return this.nome;
