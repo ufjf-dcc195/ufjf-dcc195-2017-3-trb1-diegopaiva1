@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -40,12 +41,19 @@ public class CadastroParticipante extends AppCompatActivity {
                 // Pega o email informado no cadastro
                 String email = txtEmail.getText().toString();
 
+                // Checa se nenhum dos dois campos está vazio
+                if(nome.trim().equals("") || email.trim().equals("")) {
+                    Toast.makeText(getApplicationContext(), "Dado(s) inválido(s)", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // Cria novo intent para mudar de activity
                 Intent intent = new Intent ();
                 intent.putExtra("nome", nome);
                 intent.putExtra("email", email);
                 setResult(RESULT_OK, intent);
                 finish();
+
             }
         });
 

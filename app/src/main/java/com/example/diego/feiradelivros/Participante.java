@@ -72,19 +72,19 @@ public class Participante implements Serializable {
     }
 
     public void registraHora(Context context){
-        if(horaEntrada==null){
+        if(this.horaEntrada==null){
             Date hora = Calendar.getInstance().getTime();
-            horaEntrada = dateFormatHora.format(hora);
+            this.horaEntrada = dateFormatHora.format(hora);
             Toast.makeText(context, "Hora de entrada registrada!", Toast.LENGTH_LONG).show();
         }
         else if(horaSaida==null){
             Date hora = Calendar.getInstance().getTime();
-            horaSaida = dateFormatHora.format(hora);
+            this.horaSaida = dateFormatHora.format(hora);
             Toast.makeText(context, "Hora de saída registrada!", Toast.LENGTH_LONG).show();
         }
         else{
-            horaEntrada = null;
-            horaSaida = null;
+            this.horaEntrada = null;
+            this.horaSaida = null;
             Toast.makeText(context, "Horários limpos!", Toast.LENGTH_LONG).show();
         }
     }
@@ -99,13 +99,11 @@ public class Participante implements Serializable {
         }
     }
 
-
-
-
     // Método para que, ao realizar a listagem, seja exibido apenas o nome do participante
     @Override
     public String toString() {
         return this.nome;
     }
+
 }
 

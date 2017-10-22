@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -81,21 +82,16 @@ public class CadastroReserva extends AppCompatActivity {
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    // Pega o participante selecionado pelo usuario
-                    Participante participante = (Participante) spinnerParticipantes.getSelectedItem();
-                    // Pega o livro selecionado pelo usuario
-                    Livro livro = (Livro) spinnerLivros.getSelectedItem();
+                // Pega o participante selecionado pelo usuario
+                Participante participante = (Participante) spinnerParticipantes.getSelectedItem();
+                // Pega o livro selecionado pelo usuario
+                Livro livro = (Livro) spinnerLivros.getSelectedItem();
 
-                    // Adiciona ao ArrayList de livros reservados do participante o livro selecionado
-                    participante.adicionarLivroReservado(livro);
-                    // Adiciona Ao ArrayList de participantes do livro o participante selecionado
-                    livro.adicionarParticipante(participante);
-                }
-                catch(Exception e) {
-                    e.getLocalizedMessage();
-                }
-
+                // Adiciona ao ArrayList de livros reservados do participante o livro selecionado
+                participante.adicionarLivroReservado(livro);
+                // Adiciona Ao ArrayList de participantes do livro o participante selecionado
+                livro.adicionarParticipante(participante);
+                
                 // Volta para a tela inicial
                 Intent intent = new Intent (CadastroReserva.this, MainActivity.class);
                 startActivity(intent);

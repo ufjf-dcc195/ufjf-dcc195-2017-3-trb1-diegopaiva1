@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class CadastroLivro extends AppCompatActivity {
 
@@ -36,6 +37,13 @@ public class CadastroLivro extends AppCompatActivity {
                 String editora = txtEditora.getText().toString();
                 // Pega o ano informado no cadastro
                 String ano = txtAno.getText().toString();
+
+                // Checa se nenhum dos três campos está vazio
+                if(titulo.trim().equals("") || editora.trim().equals("") || ano.trim().equals("")) {
+                    Toast.makeText(getApplicationContext(), "Dado(s) inválido(s)", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
 
                 // Cria novo intent para mudar de activity
                 Intent intent = new Intent ();
