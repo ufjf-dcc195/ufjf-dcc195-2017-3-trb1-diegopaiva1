@@ -54,6 +54,10 @@ public class Livro implements Serializable {
         this.ano = ano;
     }
 
+    public ArrayList<Participante> getParticipantes() {
+        return participantes;
+    }
+
     @Override
     public String toString() {
         String dadosVisualizacao =  "\nTítulo: " + this.titulo + "\n" +

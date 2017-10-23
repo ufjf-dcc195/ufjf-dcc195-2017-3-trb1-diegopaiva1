@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Adiciona evento de mudança de activity ao clicar em visualizar livro
+        // Adiciona evento de mudança de activity ao clicar em cadastrar reserva
         btnCadastrarReserva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
