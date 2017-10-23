@@ -1,7 +1,10 @@
 package com.example.diego.feiradelivros;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -34,6 +37,19 @@ public class VisualizarLivros extends AppCompatActivity {
 
         // Exibe listagem de livros
         lstLivros.setAdapter(adaptador);
+
+
+        lstLivros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Livro livro = adaptador.getItem(i);
+                if (livro != null) {
+                    Intent intent = new Intent(VisualizarLivros.this, DetalhesLivro.class);
+                    intent.putExtra("livro", livro);
+                    startActivity(intent);
+                }
+            }
+        });
 
     }
 

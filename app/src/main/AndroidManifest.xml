@@ -18,19 +18,20 @@
         </activity>
         <activity
             android:name=".CadastroParticipante"
-            android:label="@string/activity_cadastrar_participante"></activity>
+            android:label="@string/activity_cadastrar_participante" />
         <activity
             android:name=".DetalhesParticipante"
-            android:label="@string/activity_detalhes_participante"></activity>
+            android:label="@string/activity_detalhes_participante" />
         <activity
             android:name=".CadastroLivro"
-            android:label="@string/activity_cadastrar_livro"></activity>
+            android:label="@string/activity_cadastrar_livro" />
         <activity
             android:name=".VisualizarLivros"
-            android:label="@string/activity_visualizar_livros"></activity>
+            android:label="@string/activity_visualizar_livros" />
         <activity
             android:name=".CadastroReserva"
-            android:label="@string/activity_cadastrar_reserva"></activity>
+            android:label="@string/activity_cadastrar_reserva" />
+        <activity android:name=".DetalhesLivro"></activity>
     </application>
 
 </manifest>
