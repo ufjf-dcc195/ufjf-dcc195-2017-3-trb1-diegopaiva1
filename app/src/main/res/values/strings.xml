@@ -19,4 +19,5 @@
     <string name="btnVisualizarLivros">Visualizar livros</string>
     <string name="labelEscolherParticipante">Escolha o participante:</string>
     <string name="labelEscolherLivro">Escolha o livro:</string>
+    <string name="labelParticipantes">Participantes:</string>
 </resources>
