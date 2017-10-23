@@ -23,25 +23,32 @@ public class MainActivity extends AppCompatActivity {
     private static final int PEDE_PARTICIPANTE = 0;
     private static final int PEDE_LIVRO = 1;
 
-    // -------------------------------------
     // Adiciona dados iniciais no aplicativo
-    private void adicionaParticipantesIniciais() {
+    private void adicionaDadosIniciais() {
+        // Cria dois novos participantes
         Participante participante1 = new Participante("Diego", "diego.paiva13@gmail.com");
         Participante participante2 = new Participante("Thaynara", "thaynaraferreira1996@hotmail.com");
 
+        // Adiciona estes participantes à lista de participantes
         participantes.add(participante1);
         participantes.add(participante2);
-    }
 
-    private void adicionaLivrosIniciais() {
+        // Cria dois novos livros
         Livro livro1 = new Livro("Forrest Gump", "Abril", 1994);
         Livro livro2 = new Livro("A culpa é das estrelas", "Abril", 2014);
 
+        // Adiciona estes livros à lista de livros cadastrados
         livros.add(livro1);
         livros.add(livro2);
-    }
-    // -------------------------------------
 
+        // Setta o livro1 ao array de livros do participante1 e faz o inverso com o livro1
+        participante1.adicionarLivroReservado(livro1);
+        livro1.adicionarParticipante(participante1);
+
+        // Setta o livro2 ao array de livros do participante2 e faz o inverso com o livro2
+        participante2.adicionarLivroReservado(livro2);
+        livro2.adicionarParticipante(participante2);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         lstParticipantes = (ListView) findViewById(R.id.lstParticipantes);
 
-        adicionaParticipantesIniciais();
-        adicionaLivrosIniciais();
+        adicionaDadosIniciais();
 
         // Cria adaptador para realizar a listagem
         final ArrayAdapter<Participante> adaptador = new ArrayAdapter<Participante>(
