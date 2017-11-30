@@ -14,6 +14,7 @@ public class CadastroLivro extends AppCompatActivity {
     private EditText txtEditora;
     private EditText txtAno;
     private Button btnCadastrar;
+    protected LivroAdapter adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class CadastroLivro extends AppCompatActivity {
         txtEditora = (EditText) findViewById(R.id.txtEditora);
         txtAno = (EditText) findViewById(R.id.txtAno);
         btnCadastrar = (Button) findViewById(R.id.btnCadastrar);
+        adaptador = new LivroAdapter(getBaseContext(), null);
 
         // Primeiro campo a ser digitado quando a tela é aberta
         txtTitulo.requestFocus();
@@ -44,6 +46,7 @@ public class CadastroLivro extends AppCompatActivity {
                     return;
                 }
 
+                adaptador.inserirLivro(titulo, editora, ano);
 
                 // Cria novo intent para mudar de activity
                 Intent intent = new Intent ();

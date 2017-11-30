@@ -21,4 +21,7 @@
     <string name="labelEscolherLivro">Escolha o livro:</string>
     <string name="labelParticipantes">Participantes:</string>
     <string name="labelReservado">Reservado pelo(s) participante(s):</string>
+    <string name="labelTitulo">Título:</string>
+    <string name="labelAno">Ano:</string>
+    <string name="labelEditora">Editora:</string>
 </resources>

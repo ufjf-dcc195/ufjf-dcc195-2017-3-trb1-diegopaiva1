@@ -31,7 +31,8 @@
         <activity
             android:name=".CadastroReserva"
             android:label="@string/activity_cadastrar_reserva" />
-        <activity android:name=".DetalhesLivro"></activity>
+        <activity android:name=".DetalhesLivro" />
+        <activity android:name=".layout_livro"></activity>
     </application>
 
 </manifest>

@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Livro> livros = new ArrayList<>();
     private static final int PEDE_PARTICIPANTE = 0;
     private static final int PEDE_LIVRO = 1;
+    private LivroAdapter adapter;
 
 
     @Override
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btnCadastrarLivro = (Button) findViewById(R.id.btnCadastrarLivro);
         btnVisualizarLivros = (Button) findViewById(R.id.btnVisualizarLivros);
         lstParticipantes = (ListView) findViewById(R.id.lstParticipantes);
+        adapter = new LivroAdapter(getBaseContext(), null);
 
         // Cria adaptador para realizar a listagem
         final ArrayAdapter<Participante> adaptador = new ArrayAdapter<Participante>(
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 android.R.id.text1,
                 participantes
         );
+
 
         // Lista os participantes
         lstParticipantes.setAdapter(adaptador);
