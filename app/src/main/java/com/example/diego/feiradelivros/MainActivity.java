@@ -54,12 +54,13 @@ public class MainActivity extends AppCompatActivity {
         participanteAdapter.atualizar();
 
 
+
         // Adiciona evento de mudança de activity ao clicar em cadastrar participante
         btnCadastrarParticipante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (MainActivity.this, CadastroParticipante.class);
-                startActivityForResult(intent, PEDE_PARTICIPANTE);
+                startActivity(intent);
             }
         });
 
@@ -120,8 +121,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 
+    /*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // Checa o resultCode recebido do intent
@@ -146,5 +150,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+    */
+
+
 
 }

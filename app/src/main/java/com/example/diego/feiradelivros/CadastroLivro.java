@@ -49,11 +49,11 @@ public class CadastroLivro extends AppCompatActivity {
                 adaptador.inserirLivro(titulo, editora, ano);
 
                 // Cria novo intent para mudar de activity
-                Intent intent = new Intent ();
+                /*Intent intent = new Intent ();
                 intent.putExtra("titulo", titulo);
                 intent.putExtra("editora", editora);
                 intent.putExtra("ano", ano);
-                setResult(RESULT_OK, intent);
+                setResult(RESULT_OK, intent);*/
                 finish();
             }
         });

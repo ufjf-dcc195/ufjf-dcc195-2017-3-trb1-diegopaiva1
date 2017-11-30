@@ -16,6 +16,7 @@ public class BibliotecaDpHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(BibliotecaContract.SQL_CREATE_PARTICIPANTE);
         sqLiteDatabase.execSQL(BibliotecaContract.SQL_CREATE_LIVRO);
+        sqLiteDatabase.execSQL(BibliotecaContract.SQL_CREATE_RESERVA);
 
     }
 
@@ -23,12 +24,17 @@ public class BibliotecaDpHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int j) {
         sqLiteDatabase.execSQL(BibliotecaContract.SQL_DROP_LIVRO);
         sqLiteDatabase.execSQL(BibliotecaContract.SQL_DROP_PARTICIPANTE);
+        sqLiteDatabase.execSQL(BibliotecaContract.SQL_DROP_RESERVA);
         onCreate(sqLiteDatabase);
     }
 
     @Override
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onUpgrade(db, oldVersion, newVersion);
+    }
+
+    public void participantes(SQLiteDatabase db, int i, int j) {
+        db.execSQL("SELECT * FROM "  + BibliotecaContract.Participante.TABLE_NAME + " WHERE " + BibliotecaContract.Participante.COLUMN_NAME_ENTRADA + " <> NULL");
     }
 
 }

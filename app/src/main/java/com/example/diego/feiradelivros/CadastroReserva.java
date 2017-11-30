@@ -25,6 +25,10 @@ public class CadastroReserva extends AppCompatActivity {
     private TextView labelEscolherLivro;
     private ArrayList<Participante> participantesPresentes = new ArrayList<Participante>();
     private ArrayList<Livro> livrosCadastrados = new ArrayList<Livro>();
+    private LivroAdapter livroAdapter;
+    private ParticipanteAdapter participanteAdapter;
+    private BibliotecaDpHelper bibliotecaHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,7 @@ public class CadastroReserva extends AppCompatActivity {
         btnCadastrar = (Button) findViewById(R.id.btnCadastrar);
         labelEscolherParticipante = (TextView) findViewById(R.id.labelEscolherParticipante);
         labelEscolherLivro = (TextView) findViewById(R.id.labelEscolherLivro);
-
+        /*
         // Recebe o ArrayList de participantes da activity principal
         ArrayList<Participante> participantes = new ArrayList<Participante>();
         participantes = (ArrayList<Participante>) getIntent().getSerializableExtra("participantes");
@@ -44,7 +48,8 @@ public class CadastroReserva extends AppCompatActivity {
         // Recebe o ArrayList de livros da activity principal
         ArrayList<Livro> livros = new ArrayList<Livro>();
         livros = (ArrayList<Livro>) getIntent().getSerializableExtra("livros");
-
+        */
+        /*
         // Preenche o spinner com os participantes que estão presentes
         for(int i = 0; i < participantes.size(); i++) {
             Participante participante = participantes.get(i);
@@ -58,7 +63,8 @@ public class CadastroReserva extends AppCompatActivity {
             Livro livro = livros.get(i);
             livrosCadastrados.add(livro);
         }
-
+        */
+        /*
         // Cria adaptador para realizar a listagem de participantes
         final ArrayAdapter<Participante> adaptador1 = new ArrayAdapter<Participante>(
                 getApplicationContext(),
@@ -72,10 +78,11 @@ public class CadastroReserva extends AppCompatActivity {
                 android.R.layout.simple_spinner_dropdown_item,
                 livrosCadastrados
         );
+        */
 
         // Setta os adaptadores para os spinners
-        spinnerParticipantes.setAdapter(adaptador1);
-        spinnerLivros.setAdapter(adaptador2);
+        spinnerParticipantes.setAdapter(participanteAdapter);
+        spinnerLivros.setAdapter(livroAdapter);
 
 
 
