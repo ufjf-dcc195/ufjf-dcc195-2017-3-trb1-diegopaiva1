@@ -34,10 +34,10 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="-18dp"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailParticipante" />
 
     <TextView
-        android:id="@+id/txtEmail"
+        android:id="@+id/txtEmailParticipante"
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:layout_marginEnd="16dp"
@@ -48,10 +48,10 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="-11dp"
-        app:layout_constraintTop_toBottomOf="@+id/txtNome" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeParticipante" />
 
     <TextView
-        android:id="@+id/txtNome"
+        android:id="@+id/txtNomeParticipante"
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:layout_marginEnd="16dp"

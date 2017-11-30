@@ -76,8 +76,4 @@ public class LivroAdapter extends CursorAdapter {
             Log.e("BIBLIO", e.getStackTrace().toString());
         }
     }
-
-
-
-
 }

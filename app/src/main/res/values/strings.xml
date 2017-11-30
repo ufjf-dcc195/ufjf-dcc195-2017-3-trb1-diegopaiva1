@@ -24,4 +24,7 @@
     <string name="labelTitulo">Título:</string>
     <string name="labelAno">Ano:</string>
     <string name="labelEditora">Editora:</string>
+    <string name="title_activity_layout_participante">layout_participante</string>
+    <string name="labelNomeParticipante">Nome:</string>
+    <string name="labelEmailParticipante">E-mail:</string>
 </resources>

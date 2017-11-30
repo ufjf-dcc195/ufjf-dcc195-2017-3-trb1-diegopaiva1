@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Livro> livros = new ArrayList<>();
     private static final int PEDE_PARTICIPANTE = 0;
     private static final int PEDE_LIVRO = 1;
-    private LivroAdapter adapter;
+    private ParticipanteAdapter participanteAdapter;
 
 
     @Override
@@ -35,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
         btnCadastrarLivro = (Button) findViewById(R.id.btnCadastrarLivro);
         btnVisualizarLivros = (Button) findViewById(R.id.btnVisualizarLivros);
         lstParticipantes = (ListView) findViewById(R.id.lstParticipantes);
-        adapter = new LivroAdapter(getBaseContext(), null);
+        participanteAdapter = new ParticipanteAdapter(getBaseContext(), null);
 
+
+        /*
         // Cria adaptador para realizar a listagem
         final ArrayAdapter<Participante> adaptador = new ArrayAdapter<Participante>(
                 getApplicationContext(),
@@ -44,10 +46,13 @@ public class MainActivity extends AppCompatActivity {
                 android.R.id.text1,
                 participantes
         );
+        */
 
 
         // Lista os participantes
-        lstParticipantes.setAdapter(adaptador);
+        lstParticipantes.setAdapter(participanteAdapter);
+        participanteAdapter.atualizar();
+
 
         // Adiciona evento de mudança de activity ao clicar em cadastrar participante
         btnCadastrarParticipante.setOnClickListener(new View.OnClickListener() {
@@ -58,11 +63,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
 
         lstParticipantes.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l){
-                Participante participante = adaptador.getItem(i);
+                Participante participante = participanteAdapter.getItem(i);
                 if(participante!=null){
                     participante.registraHora(getApplicationContext());
                     return true;
@@ -74,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         lstParticipantes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Participante participante = adaptador.getItem(i);
+                Participante participante = participanteAdapter.getItem(i);
                 if (participante != null) {
                     Intent intent = new Intent(MainActivity.this, DetalhesParticipante.class);
                     intent.putExtra("participante", participante);
@@ -82,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        */
 
         // Adiciona evento de mudança de activity ao clicar em cadastrar livro
         btnCadastrarLivro.setOnClickListener(new View.OnClickListener() {

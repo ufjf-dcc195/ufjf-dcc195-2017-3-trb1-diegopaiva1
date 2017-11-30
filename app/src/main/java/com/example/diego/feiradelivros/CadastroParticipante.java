@@ -18,6 +18,7 @@ public class CadastroParticipante extends AppCompatActivity {
     private Button btnCadastrarParticipante;
     private EditText txtNome;
     private EditText txtEmail;
+    protected ParticipanteAdapter adaptador;
 
 
     @Override
@@ -27,8 +28,9 @@ public class CadastroParticipante extends AppCompatActivity {
 
         btnCadastrarParticipante = (Button) findViewById(R.id.btnCadastrarParticipante);
 
-        txtNome = (EditText) findViewById(R.id.txtNome);
-        txtEmail = (EditText) findViewById(R.id.txtEmail);
+        txtNome = (EditText) findViewById(R.id.txtNomeParticipante);
+        txtEmail = (EditText) findViewById(R.id.txtEmailParticipante);
+        adaptador = new ParticipanteAdapter(getBaseContext(), null);
 
         // Primeiro campo a ser digitado quando é aberta a tela
         txtNome.requestFocus();
@@ -46,6 +48,8 @@ public class CadastroParticipante extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Dado(s) inválido(s)", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                adaptador.inserirParticipante(nome, email, nome, email);
 
                 // Cria novo intent para mudar de activity
                 Intent intent = new Intent ();

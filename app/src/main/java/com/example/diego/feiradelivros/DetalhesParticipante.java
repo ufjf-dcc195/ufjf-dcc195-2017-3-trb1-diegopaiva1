@@ -20,8 +20,8 @@ public class DetalhesParticipante extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes_participante);
 
-        txtNome= (TextView) findViewById(R.id.txtNome);
-        txtEmail= (TextView) findViewById(R.id.txtEmail);
+        txtNome= (TextView) findViewById(R.id.txtNomeParticipante);
+        txtEmail= (TextView) findViewById(R.id.txtEmailParticipante);
         txtHoraEntrada= (TextView) findViewById(R.id.txtHoraEntrada);
         txtHoraSaida= (TextView) findViewById(R.id.txtHoraSaida);
         btnVoltar= (Button) findViewById(R.id.btnVoltar);

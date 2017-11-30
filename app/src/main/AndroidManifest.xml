@@ -32,7 +32,7 @@
             android:name=".CadastroReserva"
             android:label="@string/activity_cadastrar_reserva" />
         <activity android:name=".DetalhesLivro" />
-        <activity android:name=".layout_livro"></activity>
+        <activity android:name=".layout_participante"></activity>
     </application>
 
 </manifest>

@@ -14,12 +14,15 @@ public class BibliotecaDpHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        sqLiteDatabase.execSQL(BibliotecaContract.SQL_CREATE_PARTICIPANTE);
         sqLiteDatabase.execSQL(BibliotecaContract.SQL_CREATE_LIVRO);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int j) {
         sqLiteDatabase.execSQL(BibliotecaContract.SQL_DROP_LIVRO);
+        sqLiteDatabase.execSQL(BibliotecaContract.SQL_DROP_PARTICIPANTE);
         onCreate(sqLiteDatabase);
     }
 
